@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="techDocP.css">
+  <title>MyTechnnical_DocPage</title>
+</head>
+<body>
+  <nav id="navbar">
+    <header>AngularJS Documentation</header>
+      <ul>
+        <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+        <li><a href="#What-you-should-know" class="nav-link">What you should know</a></li>
+        <li><a href="#Why-Angular-JS" class="nav-link">Why Angular JS?</a></li>
+        <li><a href="#Alternatives" class="nav-link">Alternatives</a></li>
+        <li><a href="#Extensibility" class="nav-link">Extensibility</a></li>
+        <li><a href="#A-complete-client-solution" class="nav-link">A complete client-solution</a></li>
+        <li><a href="#AngularJSs-sweet-spot" class="nav-link">AngularJS's sweet spot</a></li>
+        <li><a href="#The-Zen-of-Angular-JS" class="nav-link">The Zen of Angular JS</a></li>
+        <li><a href="#Understanding-Controllers" class="nav-link">Understanding Controllers</a></li>
+        <li><a href="#Adding-Behavior-to-a-Scope-Object" class="nav-link">Adding Behavior to a Scope Object</a></li>
+        <li><a href="#Creating-a-service" class="nav-link">Creating a service</a></li>
+        <li><a href="#Dependecies" class="nav-link">Dependecies</a></li>
+        <li><a href="#Scope-Characteristics" class="nav-link">Scope Characteristics</a></li>
+        <li><a href="#Reference" class="nav-link">Reference</a></li>
+      </ul>
+  </nav>
+  
+  
+  
+  <main id="main-doc">
+    <section class="main-section" id="Introduction">
+      <header>Introduction</header>
+      <article>
+        <p>AngularJS is a JavaScript-based open-source front-end web framework mainly maintained by Google and by a community of individuals and corporations to address many of the challenges encountered in developing single-page applications. It aims to simplify both the development and the testing of such applications by providing a framework for client-side model–view–controller (MVC) and model–view–viewmodel (MVVM) architectures, along with components commonly used in rich Internet applications.</p>
+        <p>AngularJS is the frontend part of the MEAN stack, consisting of MongoDB database, Express.js web application server framework, Angular.js itself, and Node.js server runtime environment. Version 1.7.x is on Long Term Support until July 1st 2021. After that date AngularJS will no longer be updated and Angular (2.0+) is suggested instead</p>
+      </article>
+    </section>
+     <section class="main-section" id="What-you-should-know">
+      <header>What you should know</header>
+       <article>
+          <p>This guide assumes you have the following basic background:</p>
+         <ul>
+           <li>Moderate knowledge of HTML, CSS, and JavaScript.</li>
+           <li>Basic Model-View-Controller (MVC) concepts.</li>
+           <li>The Document Object Model (DOM)</li>
+           <li>JavaScript functions, events, and error handling.</li>
+         </ul>
+       </article>
+    </section>
+    <section class="main-section" id="Why-Angular-JS">
+      <header>Why Angular JS?</header>
+    <article>  <p>HTML is great for declaring static documents, but it falters when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.</p>
+      <p>AngularJS is a structural framework for dynamic web apps. It lets you use HTML as your template language and lets you extend HTML's syntax to express your application's components clearly and succinctly. AngularJS's data binding and dependency injection eliminate much of the code you would otherwise have to write. And it all happens within the browser, making it an ideal partner with any server technology.</p>
+      <p>AngularJS is what HTML would have been, had it been designed for applications. HTML is a great declarative language for static documents. It does not contain much in the way of creating applications, and as a result building web applications is an exercise in what do I have to do to trick the browser into doing what I want?</p>
+      <p>The impedance mismatch between dynamic applications and static documents is often solved with:</p>
+      
+      <ul>
+        <li>a library - a collection of functions which are useful when writing web apps. Your code is in charge and it calls into the library when it sees fit. E.g <code>Jquery</code></li>
+        <li>frameworks - a particular implementation of a web application, where your code fills in the details. The framework is in charge and it calls into your code when it needs something app specific. E.g. <code>durandal, ember</code>,etc.</li>
+      </ul>
+      <p>AngularJS takes another approach. It attempts to minimize the impedance mismatch between document centric HTML and what an application needs by creating new HTML constructs. AngularJS teaches the browser new syntax through a construct we call directives. Examples include:</p>
+      <ul>
+        <li>Data binding, as in <code class="">{{}}</code>.</li>
+        <li>DOM control structures for repeating, showing and hiding DOM fragments.</li>
+        <li>Support for forms and form validation.</li>
+        <li>Attaching new behavior to DOM elements, such as DOM event handling.</li>
+        <li>
+Grouping of HTML into reusable components.</li>
+      </ul>
+      </article>
+    </section>
+    <section class="main-section" id="Alternatives">
+      <header>Alternatives</header>
+      <article>
+        <p>Other frameworks deal with HTML’s shortcomings by either abstracting away HTML, CSS, and/or JavaScript or by providing an imperative way for manipulating the DOM. Neither of these address the root problem that HTML was not designed for dynamic views.</p>
+        <h2>The Basics</h2>
+        <code class="code"><ol class="linenums"><li class="L0"><span class="dec">&lt;!doctype html&gt;</span></li><li class="L1"><span class="tag">&lt;html</span><span class="pln"> </span><span class="atn"><span class="nocode code-annotation ng-scope" popover-append-to-body="true" popover-trigger="mouseenter" popover-title="ng-app" uib-popover-html="popover01"><code>ng-app</code></span></span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;head&gt;</span></li><li class="L3"><span class="pln">    </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/<span class="nocode code-annotation ng-scope" popover-append-to-body="true" popover-trigger="mouseenter" popover-title="angular.min.js" uib-popover-html="popover02"><code>angular.min.js</code></span>"</span><span class="tag">&gt;&lt;/script&gt;</span></li><li class="L4"><span class="pln">  </span><span class="tag">&lt;/head&gt;</span></li><li class="L5"><span class="pln">  </span><span class="tag">&lt;body&gt;</span></li><li class="L6"><span class="pln">    </span><span class="tag">&lt;div&gt;</span></li><li class="L7"><span class="pln">      </span><span class="tag">&lt;label&gt;</span><span class="pln">Name:</span><span class="tag">&lt;/label&gt;</span></li><li class="L8"><span class="pln">      </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn"><span class="nocode code-annotation ng-scope" popover-append-to-body="true" popover-trigger="mouseenter" popover-title="ng-model" uib-popover-html="popover03"><code>ng-model</code></span></span><span class="pun">=</span><span class="atv">"yourName"</span><span class="pln"> </span><span class="atn">placeholder</span><span class="pun">=</span><span class="atv">"Enter a name here"</span><span class="tag">&gt;</span></li><li class="L9"><span class="pln">      </span><span class="tag">&lt;hr&gt;</span></li><li class="L0"><span class="pln">      </span><span class="tag">&lt;h1&gt;</span><span class="pln">Hello <span class="nocode code-annotation ng-scope" popover-append-to-body="true" popover-trigger="mouseenter" popover-title="" uib-popover-html="popover04"><code class="code">{{yourName}}</code></span>!</span><span class="tag">&lt;/h1&gt;</span></li><li class="L1"><span class="pln">    </span><span class="tag">&lt;/div&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;/body&gt;</span></li><li class="L3"><span class="tag">&lt;/html&gt;</span></li></ol></code>
+        
+      </article>
+    </section>
+    <section class="main-section" id="Extensibility">
+      <header>Extensibility</header>
+     <article>
+        <p>AngularJS is a toolset for building the framework most suited to your application development. It is fully extensible and works well with other libraries. Every feature can be modified or replaced to suit your unique development workflow and feature needs. Read on to find out how.</p>
+      <p>You can create custom directive to extend AngularJS existing functionalities.</p>
+
+<p>Custom directives are used in AngularJS to extend the functionality of HTML. Custom directives are defined using "directive" function. A custom directive simply replaces the element for which it is activated. AngularJS application during bootstrap finds the matching elements and do one time activity using its compile() method of the custom directive then process the element using link() method of the custom directive based on the scope of the directive.</p>
+
+<p>You can also use the user modules.</p>
+   
+      <code class="code">var name = 'fooPluginDataSource';var directive = $directiveLoader.load(name, { opts });element.append(directive);</code>
+      </article>
+    </section>
+    <section class="main-section" id="A-complete-client">
+      <header>A complete client-solution</header>
+      <article>
+        <p>AngularJS is not a single piece in the overall puzzle of building the client-side of a web application. It handles all of the DOM and AJAX glue code you once wrote by hand and puts it in a well-defined structure. This makes AngularJS opinionated about how a CRUD (Create, Read, Update, Delete) application should be built. But while it is opinionated, it also tries to make sure that its opinion is just a starting point you can easily change. AngularJS comes with the following out-of-the-box:</p>
+        <ul>
+          <li>Everything you need to build a CRUD app in a cohesive set: Data-binding, basic templating directives, form validation, routing, deep-linking, reusable components and dependency injection</li>
+          <li>Testability story: Unit-testing, end-to-end testing, mocks and test harnesses.</li>
+          <li>Seed application with directory layout and test scripts as a starting point</li>
+        </ul>
+      </article>
+    </section>
+    <section class="main-section" id="AngularJSs-sweet-spot">
+      <header>AngularJS's sweet spot</header>
+      <article>
+        <p>AngularJS simplifies application development by presenting a higher level of abstraction to the developer. Like any abstraction, it comes at a cost of flexibility. In other words, not every app is a good fit for AngularJS. AngularJS was built with the CRUD application in mind. Luckily CRUD applications represent the majority of web applications. To understand what AngularJS is good at, though, it helps to understand when an app is not a good fit for AngularJS.</p>
+        <p>Games and GUI editors are examples of applications with intensive and tricky DOM manipulation. These kinds of apps are different from CRUD apps, and as a result are probably not a good fit for AngularJS. In these cases it may be better to use a library with a lower level of abstraction, such as <code>jQuery</code>.</p>
+      </article>
+    </section>
+    <section class="main-section" id="The-Zen-of-Angular-JS">
+      <header>The Zen of Angular JS</header>
+     <article>
+       <p>AngularJS is built around the belief that declarative code is better than imperative when it comes to building UIs and wiring software components together, while imperative code is excellent for expressing business logic.</p>
+       <ul>
+         <li>It is a very good idea to decouple DOM manipulation from app logic. This dramatically improves the testability of the code.</li>
+         <li>It is a really, really good idea to regard app testing as equal in importance to app writing. Testing difficulty is dramatically affected by the way the code is structured.</li>
+         <li>It is an excellent idea to decouple the client side of an app from the server side. This allows development work to progress in parallel, and allows for reuse of both sides</li>
+         <li>It is very helpful indeed if the framework guides developers through the entire journey of building an app: From designing the UI, through writing the business logic, to testing.</li>
+         <li>It is always good to make common tasks trivial and difficult tasks possible.</li>
+       </ul>
+       <p>AngularJS frees you from the following pains:</p>
+       <ul>
+         <li>Registering callbacks: Registering callbacks clutters your code, making it hard to see the forest for the trees. Removing common boilerplate code such as callbacks is a good thing. It vastly reduces the amount of JavaScript coding you have to do, and it makes it easier to see what your application does.</li>
+         <li>Manipulating HTML DOM programmatically: Manipulating HTML DOM is a cornerstone of AJAX applications, but it's cumbersome and error-prone. By declaratively describing how the UI should change as your application state changes, you are freed from low-level DOM manipulation tasks. Most applications written with AngularJS never have to programmatically manipulate the DOM, although you can if you want to.</li>
+         <li>
+Marshaling data to and from the UI: CRUD operations make up the majority of AJAX applications' tasks. The flow of marshaling data from the server to an internal object to an HTML form, allowing users to modify the form, validating the form, displaying validation errors, returning to an internal model, and then back to the server, creates a lot of boilerplate code. AngularJS eliminates almost all of this boilerplate, leaving code that describes the overall flow of the application rather than all of the implementation details.</li>
+         <li>Writing tons of initialization code just to get started: Typically you need to write a lot of plumbing just to get a basic "Hello World" AJAX app working. With AngularJS you can bootstrap your app easily using services, which are auto-injected into your application in a Guice-like dependency-injection style. This allows you to get started developing features quickly. As a bonus, you get full control over the initialization process in automated tests.</li>
+       </ul>
+     </article>
+    </section>
+    <section class="main-section" id="Understanding-Controllers">
+      <header>Understanding Controllers</header>
+     <article>
+       <p>In AngularJS, a Controller is defined by a JavaScript constructor function that is used to augment the AngularJS Scope.</p>
+       <ul>
+         <li>the ngController directive. A new child scope will be created and made available as an injectable parameter to the Controller's constructor function as <code>$scope</code></li>
+         <li>a route controller in a $route definition.</li>
+         <li>the controller of a regular directive, or a component directive.</li>
+       </ul>
+       <p> If the controller has been attached using the <code>controller as </code>syntax then the controller instance will be assigned to a property on the scope.</p>
+       <p>Use controllers to:</p>
+       <ul>
+         <li>Set up the initial state of the <code>$scope</code> object</li>
+         <li>Add behavior to the <code>$scope</code> object</li>
+       </ul>
+       <p>Do not use controllers to:</p>
+       <ul>
+         <li>Manipulate DOM — Controllers should contain only business logic. Putting any presentation logic into Controllers significantly affects its testability. AngularJS has databinding for most cases and directives to encapsulate manual DOM manipulation.</li>
+         <li>Format input — Use AngularJS form controls instead.</li>
+         <li>Filter output — Use AngularJS filters instead.</li>
+         <li>Share code or state across controllers — Use AngularJS services instead.</li>
+         <li>Manage the life-cycle of other components (for example, to create service instances).</li>
+       </ul>
+       <p>In general, a Controller shouldn't try to do too much. It should contain only the business logic needed for a single view.</p>
+       <p>The most common way to keep Controllers slim is by encapsulating work that doesn't belong to controllers into services and then using these services in Controllers via dependency injection. This is discussed in the Dependency Injection and Services sections of this guide.</p>
+     </article>
+    </section>
+    <section class="main-section" id="Adding-Behavior-to-a-Scope-Object">
+      <header> Adding Behavior to a Scope Object</header>
+     <aricle>
+       <p>In order to react to events or execute computation in the view we must provide behavior to the scope. We add behavior to the scope by attaching methods to the $scope object. These methods are then available to be called from the template/view.</p>
+       <p>The following example uses a Controller to add a method, which doubles a number, to the scope:</p>
+<pre class="ng-scope"><code class="code lang-js"><span class="kwd">var</span><span class="pln"> myApp </span><span class="pun">=</span><span class="pln"> angular</span><span class="pun">.</span><span class="pln">module</span><span class="pun">(</span><span class="str">'myApp'</span><span class="pun">,[]);</span><span class="pln">
+myApp</span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'DoubleController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  $scope</span><span class="pun">.</span><span class="kwd">double</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">value</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> value </span><span class="pun">*</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln"> </span><span class="pun">};</span><span class="pln">
+</span><span class="pun">}]);</span></code></pre>
+
+       <p>Once the Controller has been attached to the DOM, the <code>double</code> method can be invoked in an AngularJS expression in the template:</p>
+             <pre class="ng-scope"><code class="code lang-js"><span class="pun">&lt;</span><span class="pln">div ng</span><span class="pun">-</span><span class="pln">controller</span><span class="pun">=</span><span class="str">"DoubleController"</span><span class="pun">&gt;</span><span class="pln">
+  </span><span class="typ">Two</span><span class="pln"> times </span><span class="pun">&lt;</span><span class="pln">input ng</span><span class="pun">-</span><span class="pln">model</span><span class="pun">=</span><span class="str">"num"</span><span class="pun">&gt;</span><span class="pln"> equals </span><span class="pun">{{</span><span class="pln"> </span><span class="kwd">double</span><span class="pun">(</span><span class="pln">num</span><span class="pun">)</span><span class="pln"> </span><span class="pun">}}</span><span class="pln">
+</span><span class="pun">&lt;/</span><span class="pln">div</span><span class="pun">&gt;</span></code></pre>
+       <p>As discussed in the Concepts section of this guide, any objects (or primitives) assigned to the scope become model properties. Any methods assigned to the scope are available in the template/view, and can be invoked via AngularJS expressions and ng event handler directives (e.g. ngClick).</p>
+     </aricle>
+    </section>
+    <section class="main-section" id="Using-a-service">
+      <header>Creating a service</header>
+      <article>
+        <p>Application developers are free to define their own services by registering the service's name and service factory function, with an AngularJS module.</p>
+        <p>The service factory function generates the single object or function that represents the service to the rest of the application. The object or function returned by the service is injected into any component (controller, service, filter or directive) that specifies a dependency on the service.</p>
+      </article>
+    </section>
+    <section class="main-section" id="Dependecies">
+      <header>Dependecies</header>
+     <article>
+       <p>Services can have their own dependencies. Just like declaring dependencies in a controller, you declare dependencies by specifying them in the service's factory function signature.</p>
+       <p>The example module below has two services, each with various dependencies:</p>
+       <pre class="ng-scope"><code class="code lang-js"><span class="kwd">var</span><span class="pln"> batchModule </span><span class="pun">=</span><span class="pln"> angular</span><span class="pun">.</span><span class="pln">module</span><span class="pun">(</span><span class="str">'batchModule'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[]);</span><span class="pln">
+
+</span><span class="com">/**
+ * The `batchLog` service allows for messages to be queued in memory and flushed
+ * to the console.log every 50 seconds.
+ *
+ * @param {*} message Message to be logged.
+ */</span><span class="pln">
+batchModule</span><span class="pun">.</span><span class="pln">factory</span><span class="pun">(</span><span class="str">'batchLog'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$interval'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'$log'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$interval</span><span class="pun">,</span><span class="pln"> $log</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">var</span><span class="pln"> messageQueue </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[];</span><span class="pln">
+
+  </span><span class="kwd">function</span><span class="pln"> log</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">messageQueue</span><span class="pun">.</span><span class="pln">length</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      $log</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">'batchLog messages: '</span><span class="pun">,</span><span class="pln"> messageQueue</span><span class="pun">);</span><span class="pln">
+      messageQueue </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[];</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+
+  </span><span class="com">// start periodic checking</span><span class="pln">
+  $interval</span><span class="pun">(</span><span class="pln">log</span><span class="pun">,</span><span class="pln"> </span><span class="lit">50000</span><span class="pun">);</span><span class="pln">
+
+  </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">message</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    messageQueue</span><span class="pun">.</span><span class="pln">push</span><span class="pun">(</span><span class="pln">message</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}]);</span><span class="pln">
+
+</span><span class="com">/**
+ * `routeTemplateMonitor` monitors each `$route` change and logs the current
+ * template via the `batchLog` service.
+ */</span><span class="pln">
+batchModule</span><span class="pun">.</span><span class="pln">factory</span><span class="pun">(</span><span class="str">'routeTemplateMonitor'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$route'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'batchLog'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'$rootScope'</span><span class="pun">,</span><span class="pln">
+  </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$route</span><span class="pun">,</span><span class="pln"> batchLog</span><span class="pun">,</span><span class="pln"> $rootScope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      startMonitoring</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        $rootScope</span><span class="pun">.</span><span class="pln">$on</span><span class="pun">(</span><span class="str">'$routeChangeSuccess'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+          batchLog</span><span class="pun">(</span><span class="pln">$route</span><span class="pun">.</span><span class="pln">current </span><span class="pun">?</span><span class="pln"> $route</span><span class="pun">.</span><span class="pln">current</span><span class="pun">.</span><span class="pln">template </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">});</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">};</span><span class="pln">
+  </span><span class="pun">}]);</span></code></pre>
+       <p>In the example, note that:</p>
+       <ul>
+         <li>The <code>batchLog</code> service depends on the built-in <code>$interval</code> and <code>$log</code> services.</li>
+         <li>The <code>routeTemplateMonitor</code> service depends on the built-in <code>$route</code> service and our custom <code>batchLog</code> service.</li>
+         <li>Both services use the array notation to declare their dependencies.</li>
+         <li>The order of identifiers in the array is the same as the order of argument names in the factory function.</li>
+       </ul>
+     </article> 
+    </section>
+    <section class="main-section" id="Scope-Characteristics">
+      <header>Scope Characteristics</header>
+      <article>
+        <p>Scopes provide APIs ($watch) to observe model mutations.</p>
+        <p>Scopes provide APIs ($apply) to propagate any model changes through the system into the view from outside of the "AngularJS realm" (controllers, services, AngularJS event handlers).</p>
+        <p>Scopes can be nested to limit access to the properties of application components while providing access to shared model properties. Nested scopes are either "child scopes" or "isolate scopes". A "child scope" (prototypically) inherits properties from its parent scope. An "isolate scope" does not. See <a href="https://docs.angularjs.org/guide/directive#isolating-the-scope-of-a-directive" class="more" target="_blank">isolated scopes</a> for more information.</p>
+        <p>Scopes provide context against which expressions are evaluated. For example <code>{{username}}</code> expression is meaningless, unless it is evaluated against a specific scope which defines the <code>username</code> property.</p> 
+      </article>
+    </section>
+    <section class="main-section" id="Reference">
+      <header>Reference</header>
+      <article>
+        <ul>
+          <li>All the documentation in this page is taken from <a href="https://angularjs.org/" class="more"  target="_blank"> AngularJS Oficial Page</a> and <a href="https://docs.angularjs.org/guide" class="more" target="_blank">AngularJS Developer Guide</a></li>
+        </ul>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
